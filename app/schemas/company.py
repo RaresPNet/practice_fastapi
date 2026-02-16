@@ -2,6 +2,8 @@ from typing import List, Optional
 from pydantic import BaseModel, EmailStr
 from datetime import date
 
+from app.schemas.user import User
+
 class CompanyBase(BaseModel):
     name: str
     email: Optional[EmailStr] = None
@@ -22,4 +24,4 @@ class Company(CompanyBase):
         orm_mode = True
 
 class CompanyWithEmployees(Company):
-    emplyee_ids: List[int] = []
+    employees: List[User] = []
