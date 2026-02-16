@@ -30,3 +30,5 @@ class CRUDCompany(CRUDBase[Company, CompanyCreate, CompanyUpdate]):
     
     def is_verified(self, company: Company) -> bool:
         return company.is_verified
+    
+company = CRUDCompany(Company)
