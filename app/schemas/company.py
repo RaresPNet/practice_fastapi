@@ -16,6 +16,11 @@ class CompanyCreate(CompanyBase):
     owner_id: int
     pass
 
+class CompanyUpdate(CompanyBase):
+    # We make name optional here because it was required in CompanyBase
+    name: Optional[str] = None
+    pass
+
 class Company(CompanyBase):
     id: int
     created_at: date
